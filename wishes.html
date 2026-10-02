@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пожелания для папы</title>
+  <style>
+    :root {
+      --peach: #e7b8a7;
+      --peach-light: #f9ebe5;
+      --cream: #fffaf7;
+      --wine: #632d3b;
+      --burgundy: #7d263a;
+      --ink: #35272a;
+      --muted: #765c61;
+      --border: rgba(125,38,58,.16);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); font-family: Georgia, "Times New Roman", serif; background: linear-gradient(145deg, #fffaf7 0%, #f9e9e2 100%); }
+    .page { width: min(1220px, calc(100% - 36px)); margin: 0 auto; }
+    .top { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 34px 0 25px; }
+    .back { display: inline-flex; align-items: center; gap: 9px; color: var(--burgundy); font-family: Arial, sans-serif; font-size: .92rem; font-weight: 700; text-decoration: none; }
+    .back:hover, .back:focus-visible { color: var(--wine); outline: none; }
+    .title-wrap { text-align: right; }
+    .eyebrow { margin: 0 0 5px; color: var(--burgundy); font-family: Arial, sans-serif; font-size: .68rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+    h1 { margin: 0; color: var(--wine); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 500; line-height: 1; }
+    .intro { max-width: 720px; margin: 8px auto 36px; padding: 21px 25px; color: var(--muted); text-align: center; font-size: 1.08rem; line-height: 1.65; background: rgba(255,250,247,.7); border: 1px solid var(--border); border-radius: 18px; }
+    .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; padding-bottom: 52px; }
+    .card { display: flex; flex-direction: column; min-width: 0; overflow: hidden; cursor: pointer; background: rgba(255,255,255,.89); border: 1px solid var(--border); border-radius: 20px; box-shadow: 0 8px 24px rgba(99,45,59,.09); transition: transform .28s ease, box-shadow .28s ease; }
+    .card:hover, .card:focus-visible { outline: none; box-shadow: 0 17px 33px rgba(99,45,59,.16); transform: translateY(-6px); }
+    .photo-wrap { position: relative; aspect-ratio: 1 / 1.05; overflow: hidden; background: var(--peach-light); }
+    .photo-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .55s ease; }
+    .card:hover img { transform: scale(1.045); }
+    .number { position: absolute; top: 13px; left: 13px; display: grid; width: 31px; height: 31px; place-items: center; color: #fff8f4; font-family: Arial, sans-serif; font-size: .77rem; font-weight: 700; background: var(--burgundy); border-radius: 50%; }
+    .card-info { display: flex; flex: 1; align-items: center; justify-content: center; min-height: 92px; padding: 16px; color: var(--wine); text-align: center; font-size: 1.05rem; font-weight: 600; line-height: 1.3; }
+    .modal { position: fixed; inset: 0; z-index: 10; display: flex; align-items: center; justify-content: center; padding: 22px; pointer-events: none; opacity: 0; background: rgba(53,39,42,.62); backdrop-filter: blur(7px); transition: opacity .25s ease; }
+    .modal.active { pointer-events: auto; opacity: 1; }
+    .modal-content { position: relative; width: min(510px, 100%); max-height: min(700px, calc(100vh - 44px)); overflow: auto; padding: 48px 34px 36px; text-align: center; background: #fffaf7; border: 1px solid rgba(231,184,167,.85); border-radius: 25px; box-shadow: 0 22px 65px rgba(0,0,0,.25); transform: translateY(12px) scale(.97); transition: transform .25s ease; }
+    .modal.active .modal-content { transform: translateY(0) scale(1); }
+    .close { position: absolute; top: 12px; right: 17px; width: 42px; height: 42px; color: var(--burgundy); font-size: 2rem; line-height: 1; cursor: pointer; background: transparent; border: 0; border-radius: 50%; }
+    .close:hover, .close:focus-visible { background: var(--peach-light); outline: none; }
+    .modal-photo { width: min(260px, 100%); aspect-ratio: 1; margin: 0 auto 24px; object-fit: cover; border: 7px solid var(--peach-light); border-radius: 18px; }
+    .modal-title { margin: 0 0 16px; color: var(--wine); font-size: 1.75rem; font-weight: 500; }
+    .modal-text { margin: 0; color: var(--muted); font-size: 1.12rem; line-height: 1.72; }
+    @media (max-width: 1000px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (max-width: 720px) { .page { width: min(100% - 24px, 1220px); } .top { padding-top: 24px; } .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } .card { border-radius: 16px; } .card-info { min-height: 76px; padding: 12px 9px; font-size: .95rem; } .intro { margin-bottom: 24px; padding: 17px; font-size: 1rem; } .modal-content { padding: 47px 22px 28px; } }
+    @media (max-width: 390px) { .grid { grid-template-columns: 1fr; } .title-wrap { text-align: left; } .top { align-items: flex-start; flex-direction: column-reverse; gap: 16px; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="top">
+      <a class="back" href="index.html" aria-label="Вернуться на главную страницу">← На главную</a>
+      <div class="title-wrap"><p class="eyebrow">16 тёплых слов</p><h1>Пожелания для папы</h1></div>
+    </header>
+    <p class="intro">Нажми на любую фотографию или карточку — откроется отдельное пожелание.</p>
+    <section class="grid" id="wishesGrid" aria-label="Пожелания папе"></section>
+  </main>
+  <div class="modal" id="wishModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <button class="close" id="closeModal" type="button" aria-label="Закрыть">×</button>
+      <img class="modal-photo" id="modalPhoto" src="" alt="">
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <p class="modal-text" id="modalText"></p>
+    </div>
+  </div>
+  <script>
+    const wishesData = [
+      { img: "photo1", title: "Здоровья", wish: "Пусть здоровья хватает на всё, что тебе хочется делать, а каждый новый день приносит спокойствие и силы." },
+      { img: "photo2", title: "Финансового благополучия", wish: "Желаю тебе достатка, финансовой уверенности и возможностей воплощать все свои мечты." },
+      { img: "photo3", title: "Радости", wish: "Желаю замечать больше хорошего в обычных днях и находить поводы улыбаться даже тогда, когда день начинается совсем обычно." },
+      { img: "photo4", title: "Спокойствия", wish: "Пусть в жизни будет больше тихих вечеров, приятных разговоров и ощущения, что всё самое важное находится рядом." },
+      { img: "photo5", title: "Удачи", wish: "Желаю, чтобы нужные возможности появлялись вовремя, решения давались легко, а задуманное постепенно становилось реальностью." },
+      { img: "photo6", title: "Хороших людей", wish: "Пусть рядом встречаются надёжные, добрые и искренние люди, с которыми легко строить планы и приятно проводить время." },
+      { img: "photo7", title: "Больше поводов для гордости", wish: "Пусть каждый твой день приносит чувство гордости за себя, свои решения, поступки и всё, что ты создаёшь." },
+      { img: "photo8", title: "Тепла и уюта", wish: "Желаю возвращаться домой с ощущением тепла и знать, что здесь тебя любят, ждут и всегда рады тебе." },
+      { img: "photo9", title: "Добра и приятных эмоций", wish: "Пусть в твоём сердце всегда живут доброта, спокойствие и радость, а каждый день приносит тёплые и приятные эмоции." },
+      { img: "photo10", title: "Море путешествий", wish: "Пусть впереди будет ещё много мест, которые захочется увидеть, дорог, по которым захочется проехать, и историй, которые потом приятно вспоминать." },
+      { img: "photo11", title: "Всего наилучшего", wish: "Пусть судьба щедро подарит тебе здоровье, счастье, душевный покой и всё самое лучшее." },
+      { img: "photo12", title: "Сил и крепкой выдержки", wish: "Пусть сил хватает не только на обязанности, но и на мечты, планы и всё то, что давно хотелось попробовать." },
+      { img: "photo13", title: "Чтобы твои труды ценили по достоинству", wish: "Пусть каждый твой труд будет замечен, а старания встретят искреннюю благодарность и заслуженное признание." },
+      { img: "photo14", title: "Веры в себя", wish: "Верь в себя так же сильно, как я верю в тебя, ведь ты способен преодолеть любые трудности." },
+      { img: "photo15", title: "Семейного счастья", wish: "Пусть рядом всегда будут люди, с которыми можно быть собой, смеяться, разговаривать обо всём и просто молчать." },
+      { img: "photo16", title: "Целеустремлённости", wish: "Желаю тебе целеустремлённости, сил и уверенности, чтобы достигать всего, чего ты по-настоящему хочешь." }
+    ];
+    const grid = document.getElementById("wishesGrid");
+    const modal = document.getElementById("wishModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalText = document.getElementById("modalText");
+    const modalPhoto = document.getElementById("modalPhoto");
+    const closeModal = document.getElementById("closeModal");
+    let lastCard = null;
+    function fallbackSvg(number) {
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800"><rect width="100%" height="100%" fill="#f9ebe5"/><text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-family="Georgia, serif" font-size="54" fill="#632d3b">Фото ${number}</text></svg>`;
+      return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+    }
+    function addImageFallback(image, baseName, number) {
+      image.addEventListener("error", function tryJpg() {
+        image.removeEventListener("error", tryJpg);
+        image.src = `images/${baseName}.jpg`;
+        image.addEventListener("error", function tryPng() {
+          image.removeEventListener("error", tryPng);
+          image.src = `images/${baseName}.png`;
+          image.addEventListener("error", function showFallback() {
+            image.removeEventListener("error", showFallback);
+            image.src = fallbackSvg(number);
+          });
+        });
+      });
+    }
+    function openModal(data, number, card) {
+      lastCard = card;
+      modalTitle.textContent = data.title;
+      modalText.textContent = data.wish;
+      modalPhoto.alt = data.title;
+      modalPhoto.src = `images/${data.img}.WEBP`;
+      addImageFallback(modalPhoto, data.img, number);
+      modal.classList.add("active");
+      closeModal.focus();
+    }
+    function closeModalWindow() { modal.classList.remove("active"); if (lastCard) lastCard.focus(); }
+    wishesData.forEach((data, index) => {
+      const number = index + 1;
+      const card = document.createElement("article");
+      card.className = "card";
+      card.tabIndex = 0;
+      card.setAttribute("role", "button");
+      card.setAttribute("aria-label", `Открыть пожелание: ${data.title}`);
+      card.innerHTML = `<div class="photo-wrap"><span class="number">${number}</span><img src="images/${data.img}.WEBP" alt="${data.title}" loading="lazy"></div><div class="card-info">${data.title}</div>`;
+      addImageFallback(card.querySelector("img"), data.img, number);
+      card.addEventListener("click", () => openModal(data, number, card));
+      card.addEventListener("keydown", event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); openModal(data, number, card); } });
+      grid.appendChild(card);
+    });
+    closeModal.addEventListener("click", closeModalWindow);
+    modal.addEventListener("click", event => { if (event.target === modal) closeModalWindow(); });
+    document.addEventListener("keydown", event => { if (event.key === "Escape" && modal.classList.contains("active")) closeModalWindow(); });
+  </script>
+</body>
+</html>
